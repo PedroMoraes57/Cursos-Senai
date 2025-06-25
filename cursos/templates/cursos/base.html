@@ -1,0 +1,43 @@
+<!--Pedro Henrique Ferreira Moraes-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cursos Senai{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <script src="{% static 'js/acoes.js' %}"></script>
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'images/senai-logo.png' %}" alt="SENAI" class="logo">
+        <h1>Sistema de Gestão de Cursos - SENAI</h1>
+        <a href="{% url 'cadastro_usuario' %}" class="botaoCadastro">Fazer Cadastro</a>
+        <nav>
+            {% if user.is_authenticated %}
+            <a href="{% url 'lista_cursos' %}">Cursos</a>
+            <a href="{% url 'cadastrar_interesse' %}">Quero me Inscrever</a>
+            <a href="{% url 'lista_interesses' %}">Interesses</a>
+            <form action="{% url 'logout' %}" method="post" style="display: inline; background-color: transparent;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-logout btn-sair">Sair</button>
+            </form>
+            {% else %}
+                <a href="{% url 'login' %}">Área Administrativa</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SENAI - Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

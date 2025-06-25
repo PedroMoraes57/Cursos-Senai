@@ -1,0 +1,14 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Cadastrar Clientes{% endblock %}
+
+
+{% block content %}
+
+    <h2>Cadastrar Cliente</h2>
+    <form method="post" id="form-interesse">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+{% endblock %}
+

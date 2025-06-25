@@ -1,0 +1,13 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Login - SENAI{% endblock %}
+
+
+{% block content %}
+    <h2>Login Administrativo</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Entrar</button>
+        <a href="{% url 'cadastro_usuario' %}" class="botaoCadastro2">Não Possui Cadastro?</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Detalhes Interesse{% endblock %}
+
+{% block content %}
+    <h2>Detalhes dos Interesses</h2>
+    <ul>
+        <li><b>Nome:</b> {{ interesse.nome_interessado }}</li>
+        <li><b>Email:</b> {{ interesse.email }}</li>
+        <li><b>Telefone:</b> {{ interesse.telefone }}</li>
+        <li><b>Cidade:</b> {{ interesse.cidade }}</li>
+        <li><b>Data de Nascimento:</b> {{ interesse.data_nascimento|date:"d/m/Y" }}</li>
+        <li><b>Curso:</b> {{ interesse.curso }}</li>
+        <li><b>Como conheceu:</b> {{ interesse.como_conheceu }}</li>
+        <li><b>Status Contato:</b> {{ interesse.status_contato }}</li>
+        <li><b>Observações:</b> {{ interesse.observacoes }}</li>
+        <li><b>Data do interesse:</b> {{ interesse.data_interesse|date:"d/m/Y H:i" }}</li>-
+    </ul>
+    <a href="{% url 'lista_interesses' %}" class="btn">Voltar a lista de Interesses</a>
+{% endblock %}

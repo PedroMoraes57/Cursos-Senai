@@ -1,0 +1,36 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Lista de Interesses{% endblock %} 
+
+
+{% block content %}
+    <h2>Lista de Interesses - SENAI</h2>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Cidade</th>
+            <th>Curso</th>
+            <th>Data</th>
+            <th>Status Contato</th>
+            <th>Ações</th>
+        </tr>
+        {% for interesse in interesses %}
+            <tr>
+                <td>{{ interesse.nome_interessado }}</td>
+                <td>{{ interesse.email }}</td>
+                <td>{{ interesse.cidade }}</td>
+                <td>{{ interesse.curso.nome }}</td>
+                <td>{{ interesse.data_interesse|date:'d/m/Y H:i' }}</td>
+                <td>{{ interesse.status_contato}}</td>
+                <td>
+                    <a href="{% url 'detalhe_interesse' interesse.id %}">Detalhes</a>
+                </td>
+                <tr>
+                    {% empty %}
+                </tr>
+                <td colspan="7">Nenhum interesse cadastrado.</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

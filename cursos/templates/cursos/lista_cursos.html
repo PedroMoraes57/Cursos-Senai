@@ -1,0 +1,42 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Lista de Cursos{% endblock %}
+
+{% block content %}
+    <h2>Lista de Cursos Disponiveis</h2>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Código</th>
+            <th>Área</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+            <th>Vagas</th>
+            {% if user.is_authenticated %}
+                <th>Ações</th>
+            {% endif %}
+        </tr>
+        {% for curso in cursos %}
+        <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.codigo }}</td>
+            <td>{{ curso.area }}</td>
+            <td>{{ curso.carga_horaria }}</td>
+            <td>{{ curso.modalidade }}</td>
+            <td>{{ curso.vagas }}</td>
+            {% if user.is_authenticated %}
+                <td>
+                    <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+                    <a href="{% url 'excluir_curso' curso.id %}">Excluir</a>
+                </td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">Nenhum curso cadastrado.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if user.is_authenticated %}
+        <a href="{% url 'cadastrar_curso' %}">Cadastrar Novo Curso</a>
+    {% endif %}
+{% endblock %}

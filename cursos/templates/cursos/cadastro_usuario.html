@@ -1,0 +1,16 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Cadastrar Usuário{% endblock %}
+
+
+{% block content %}
+    <div class="form-container">
+        <h2>Cadastrar Usuário - SENAI</h2>
+        <p>Faça seu cadastro no site de gestão de cursos do SENAI</p> 
+        <form method="post" autocomplete="off"> 
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <button type="submit" class="btn">Cadastrar-se</button>
+            <a href="{% url 'login' %}" class="btn btn-cancelar">Já Possui Login?</a> 
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'cursos/base.html' %}
+{% load static %}
+{% block title %}Cursos - SENAI{% endblock %} 
+
+
+{% block content %}
+    <div class="index-container">
+        <div class="index-banner">
+            <img src="{% static 'images/senai-logo.png' %}" alt="SENAI" class="index-logo">
+            <h2>Boas vindas aos sistema de Gestão de Cursos -SENAI!</h2>
+            <p>Aqui voê pode cadastrar, excluir e editar cursos do SENAI</p>
+            <div class="index-actions">
+                <a href="{% url 'lista_cursos' %}">Lista de Cursos</a>
+                <a href="{% url 'cadastrar_interesse' %}">Cadastrar Interesse</a>
+            </div>
+        </div>
+        <section class="index-info">
+            <h3>Alguns dos diferencias do SENAI!</h3>
+            <ul>
+                <li><b>Tradição:</b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis beatae esse placeat est maiores, rem,
+                     laudantium, quaerat explicabo quasi accusamus vitae ea labore! Voluptas corporis ut facilis animi a odio?</li>
+                <li><b>Infraestrutura:</b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis beatae esse placeat est maiores, rem,
+                    laudantium, quaerat explicabo quasi accusamus vitae ea labore! Voluptas corporis ut facilis animi a odio</li>
+                <li><b>Conexão com a indústria:</b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis beatae esse placeat est maiores, rem,
+                    laudantium, quaerat explicabo quasi accusamus vitae ea labore! Voluptas corporis ut facilis animi a odio</li>
+                <li><b>Certificação reconhecida:</b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis beatae esse placeat est maiores, rem,
+                    laudantium, quaerat explicabo quasi accusamus vitae ea labore! Voluptas corporis ut facilis animi a odio</li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}

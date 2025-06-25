@@ -1,0 +1,8 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Logout - SENAI{% endblock %}
+
+
+{% block content %}
+    <h2>Você saiu com sucesso.</h2>
+    <a href="{% url 'login' %}" class="btn">Voltar ao Login</a>
+{% endblock %}

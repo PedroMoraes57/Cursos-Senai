@@ -1,0 +1,12 @@
+{% extends 'cursos/base.html' %}
+{% block title %}{{ curso|default:'Curso Não encontrado' }} Curso - SENAI - Edição{%endblock %}
+
+{% block content %}
+    <h2>{{ curso|default:'(Curso não Encontrado)' }} Curso</h2> 
+    <form method="post"> 
+        {% csrf_token %}
+        {{ form.as_p }} 
+        <button type="submit" class="btn">Salvar</button>
+        <a href="{% url 'lista_cursos' %}" class="btn-cancelar">Cancelar</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'cursos/base.html' %}
+{% block title %}Excluir Curso{% endblock %} 
+
+
+{% block content %}
+    <h2>Exluir Curso - SENAI</h2>
+    <p>Tem certeza que deseja excluir o curso <strong>{{ curso.nome }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-excluir">Sim, excluir</button>
+        <a href="{% url 'lista_cursos' %}">Cancelar</a>
+    </form>
+{% endblock %}
+
+

@@ -21,10 +21,9 @@ O sistema oferece autenticação, controle de permissões, CRUD completo e inter
 ---
 
 ## 🛠 Tecnologias Utilizadas
-- **Python 3.x** + **Django**
+- **Python** + **Django**
 - **MySQL**
 - **HTML5**, **CSS3**, **JavaScript**
 - **Bootstrap** (opcional para responsividade)
-- **Django REST Framework** (opcional para API)
-
+  
 ---
